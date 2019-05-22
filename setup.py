@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='nrgmodbus',
-    version='0.1.3',
+    version='0.1.4',
     description='library for making modbus connections to NRG Systems devices.',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -13,7 +13,7 @@ setup(
     author='NRG Systems, Inc.',
     author_email='support@nrgsystems.com',
     licence='MIT',
-    keywords='nrg systems symphoniepro ipackaccess wind modbus'
+    keywords='nrg systems symphoniepro ipackaccess wind modbus',
     packages=[
         'nrgmodbus',
     ],
