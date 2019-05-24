@@ -12,12 +12,15 @@ class ipackaccess(object):
         logger_model : int, finished good number of connected Symphonie
             (default 8206)
     """
-    def __init__(self, ip='', port=502, logger_model=8206, unit=1):
+    def __init__(self, ip='', port=502, logger_model=8206, unit=1, connect=False):
         self.ip = ip
         self.logger_model = logger_model
         self.port = port
         self.unit = unit
         self.hard_init_registers()
+        self.e = ''
+        if connect == True:
+            self.connect()
 
 
     def hard_init_registers(self):
@@ -199,9 +202,16 @@ class ipackaccess(object):
         print("Connecting to {0}... \t\t".format(self.ip), end="", flush=True)
         try:
             self.client.connect()
-            print("[OK]")
-        except:
+            if self.client.is_socket_open() == True:
+                print("[OK]")
+            else:
+                self.client.connect()
+                if self.client.is_socket_open != True:
+                    raise ValueError('Could Not Connect to {0}'.format(self.ip))
+        except Exception as e:
+            self.e = e
             print("[FAILED]")
+            print(self.e)
             
 
     def disconnect(self):
@@ -212,6 +222,67 @@ class ipackaccess(object):
         except Exception as e:
             print("[ERROR]")
             print(e)
+
+
+    def poll(self, interval=4, reconnect=True, 
+             stat=True, rt=True, serial=False,
+             diag=False, config=False,
+             db='', save_to_db=False,
+             echo=False):
+        """
+        regularly poll registers
+
+        parameters : (default value)
+              interval : seconds to wait between polls (4)
+             reconnect : automatically reconnect on failure (True)
+                  stat : poll statistical registers (True)
+                    rt : poll real time registers (True)
+                serial : poll serial registers (False)
+                  diag : poll diagnostic registers (False)
+                config : poll config registers (False)
+                    db : sqlite3 db to save to ('')
+            save_to_db : save to db? (False)
+                  echo : print some data to console (False)
+
+        returns register values as individual and packages arrays
+        """
+        from time import time, sleep
+        i=0
+        # set up database connection if save_to_db == True
+        while True:
+            poll_time = time()
+            i += 1
+            if self.e != '':
+                if reconnect == True:
+                    self.connect()
+                else:
+                    return "Disconnected from {0}, reconnect disabled".format(self.ip)
+                self.e = ''
+
+            if stat == True:
+                self.return_stat_readings()
+            if rt == True:
+                self.return_rt_data_readings()
+            if serial == True:
+                self.return_rt_serial_readings()
+            if diag == True:
+                self.return_diag_readings()
+            if config == True:
+                self.return_config()
+
+            if save_to_db == True:
+                # do the db things
+                pass
+
+            if echo == True:
+                if rt == True:
+                    print("{0}\t{1}\t{2}\t{3}".format(i,self.date_time,self.rt_ch1,self.rt_ch13))
+                else:
+                    print("Poll # {0}".format(i))
+
+            while time() < poll_time + interval:
+                sleep(0.01)
+
 
 
     def return_diag_readings(self):
@@ -234,10 +305,23 @@ class ipackaccess(object):
         self.diag_sd_used = self.read_single_register(self.hr_diag_sd_used)
 
 
+    def return_rt(self):
+        self.rt_year = self.read_single_register(self.hr_rt_year)
+        self.rt_month = self.read_single_register(self.hr_rt_month)
+        self.rt_day = self.read_single_register(self.hr_rt_day)
+        self.rt_hour = self.read_single_register(self.hr_rt_hour)
+        self.rt_minute = self.read_single_register(self.hr_rt_minute)
+        self.rt_second = self.read_single_register(self.hr_rt_second)
+        self.time = ":".join(map(str, [self.rt_hour,self.rt_minute,self.rt_second]))
+        self.date = "-".join(map(str, [self.rt_year,self.rt_month,self.rt_day]))
+        self.date_time = " ".join([self.date,self.time])
+
+
     def return_rt_data_readings(self):
         """
         returns real time data from all channels
         """
+        self.return_rt()
         self.rt_ch1 = self.read_single_register([self.hr_rt_channel_readings[0]+0,2])
         self.rt_ch2 = self.read_single_register([self.hr_rt_channel_readings[0]+2,2])
         self.rt_ch3 = self.read_single_register([self.hr_rt_channel_readings[0]+4,2])
@@ -264,7 +348,8 @@ class ipackaccess(object):
         self.rt_ch24 = self.read_single_register([self.hr_rt_channel_readings[0]+46,2])
         self.rt_ch25 = self.read_single_register([self.hr_rt_channel_readings[0]+48,2])
         self.rt_ch26 = self.read_single_register([self.hr_rt_channel_readings[0]+50,2])
-        self.rt_ch_all = [self.rt_ch1, self.rt_ch2, self.rt_ch3, self.rt_ch4, self.rt_ch5,
+        self.rt_ch_all = [self.date_time,
+                          self.rt_ch1, self.rt_ch2, self.rt_ch3, self.rt_ch4, self.rt_ch5,
                           self.rt_ch6, self.rt_ch7, self.rt_ch8, self.rt_ch9, self.rt_ch10,
                           self.rt_ch11, self.rt_ch12, self.rt_ch13, self.rt_ch14, self.rt_ch15,
                           self.rt_ch16, self.rt_ch17, self.rt_ch18, self.rt_ch19, self.rt_ch20,
@@ -282,12 +367,18 @@ class ipackaccess(object):
         self.rt_ch30 = self.read_single_register([self.hr_rt_channel_readings[0]+60,2])
 
 
+    def return_stat_readings(self):
+        """
+        poll statistical registers
+        """
+        pass
+
+
     def return_config(self):
         """
         returns data from config registers
         """
         pass
-
 
 
     def read_registers(self, list_of_registers_to_read):
@@ -324,7 +415,7 @@ class ipackaccess(object):
             #values = rr.registers
             return flo
         except Exception as e:
-            print(e)
+            self.e = e
             return 9999
 
 
