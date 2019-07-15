@@ -176,9 +176,9 @@ class ipackaccess(object):
         self.hr_sta_ch26_max = [2734, 2]
         self.hr_sta_ch26_min = [2736, 2]
         # diagnostic data
-        self.hr_diag_year = [3000, 1]
-        self.hr_diag_month = [3001, 1]
-        self.hr_diag_day = [3002, 1]
+        self.hr_diag_year = [3001, 1]
+        self.hr_diag_month = [3002, 1]
+        self.hr_diag_day = [3003, 1]
         self.hr_diag_hour = [3003, 1]
         self.hr_diag_minute = [3004, 1]
         self.hr_diag_second = [3005, 1]
@@ -304,6 +304,21 @@ class ipackaccess(object):
         self.diag_sd_free = self.read_single_register(self.hr_diag_sd_free)
         self.diag_sd_used = self.read_single_register(self.hr_diag_sd_used)
 
+
+    def return_system_info(self):
+                # system information
+        self.signed_num_ex = self.read_single_register(self.hr_signed_num_ex)
+        self.unsigned_num_ex = self.read_single_register(self.hr_unsigned_num_ex)
+        self.unsigned_16_num_ex = self.read_single_register(self.hr_unsigned_16_num_ex)
+        self.site_number= self.read_single_register(self.hr_site_number)
+        self.logger_sn = self.read_single_register(self.hr_logger_sn)
+        self.logger_model = self.read_single_register(self.hr_logger_model)
+        self.logger_ver = self.read_single_register(self.hr_logger_ver)
+        self.logger_fw = self.read_single_register(self.hr_logger_fw)
+        self.ipack_sn = self.read_single_register(self.hr_ipack_sn)
+        self.ipack_model = self.read_single_register(self.hr_ipack_model)
+        self.ipack_ver= self.read_single_register(self.hr_ipack_ver)
+        self.ipack_fw = self.read_single_register(self.hr_ipack_fw)
 
     def return_rt(self):
         self.rt_year = self.read_single_register(self.hr_rt_year)
