@@ -176,9 +176,9 @@ class ipackaccess(object):
         self.hr_sta_ch26_max = [2734, 2]
         self.hr_sta_ch26_min = [2736, 2]
         # diagnostic data
-        self.hr_diag_year = [3001, 1]
-        self.hr_diag_month = [3002, 1]
-        self.hr_diag_day = [3003, 1]
+        self.hr_diag_year = [3000, 1]
+        self.hr_diag_month = [3001, 1]
+        self.hr_diag_day = [3002, 1]
         self.hr_diag_hour = [3003, 1]
         self.hr_diag_minute = [3004, 1]
         self.hr_diag_second = [3005, 1]
