@@ -1,7 +1,7 @@
-# <img alt="nrgmodbus" src="https://www.nrgsystems.com/mysite/images/logo.png?v=3" height="40">
+# ![NRGPy](https://www.gravatar.com/avatar/6282094b092c756acc9f7552b164edfe?s=24) nrgmodbus
 
 
-'''nrgmodbus''' is a Python package for making modbus connections to NRG devices.
+**nrgmodbus** is a Python package for making modbus connections to NRG devices.
 
 
 ## Installation:
