@@ -1,5 +1,8 @@
-venv/
-nrgmodbus.egg-info/
-__pycache__/
+*__pycache__/
+*egg-info/
 build/
 dist/
+venv/
+
+*ipynb
+!.gitignore

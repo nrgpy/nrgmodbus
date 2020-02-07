@@ -1,4 +1,4 @@
-# <img alt="NRGPy" src="https://www.nrgsystems.com/mysite/images/logo.png?v=3" height="40">
+# <img alt="nrgmodbus" src="https://www.nrgsystems.com/mysite/images/logo.png?v=3" height="40">
 
 '''nrgmodbus''' is a Python package for making modbus connections to NRG devices.
 
@@ -7,7 +7,7 @@
 
 ```python
 # from the directory containing this README file:
-pip install -e .
+pip install nrgmodbus
 ```
 
 ## Examples:
@@ -15,47 +15,32 @@ pip install -e .
 ### Single polling:
 
 ```python
-In [1]: from nrgmodbus.nrgmodbus import ipackaccess
+In [1]: import nrgmodbus
 
-In [2]: poller = ipackaccess(ip='192.168.178.168')
+In [2]: poller = nrgmodbus.ipackaccess(ip='192.168.178.168')
 
 In [3]: poller.connect()
 Connecting to 192.168.178.168...                [OK]
 
 In [4]: poller.return_diag_readings()
 
-In [5]: poller.diag_12v_bat
+In [5]: poller.hr.diag['12v_bat']['value']
 Out[5]: 14.09000015258789
 
-In [6]: poller.diag_temp
+In [6]: poller.hr.diag['temp']['value']
 Out[6]: 22.739999771118164
 
-In [7]: poller.return_rt_data_readings()
+In [7]: poller.return_channel_data(1)
 
-In [8]: poller.rt_ch1
-Out[8]: 0.2101999968290329
+In [8]: poller.hr.data_ch[1]
+Out[8]: {'avg': {'reg': [2506, 2], 'value': 6.4},
+         'sd': {'reg': [2508, 2], 'value': 2.1},
+         'max': {'reg': [2510, 2], 'value': 9.1},
+         'min': {'reg': [2512, 2], 'value': 4.6},
+         'gust': {'reg': [2514, 2], 'value': 9.0},
+         'samp': {'reg': [1506, 2], 'value': 6.2}}
 ```
 
-### Automatic polling:
+## spidar
 
-```python
-In [1]: from nrgmodbus.nrgmodbus import ipackaccess
-
-In [2]: poller = ipackaccess(ip='192.168.178.168', connect=True)
-Connecting to 192.168.178.168...                [OK]
-
-In [3]: poller.poll(interval=4, echo=True)
-
-1       2019-5-24 1:23:7        0.2101999968290329      0.05000000074505806
-2       2019-5-24 1:23:11       0.2101999968290329      0.05000000074505806
-3       2019-5-24 1:23:15       0.2101999968290329      0.05000000074505806
-
-...
-
-37      2019-5-24 1:25:31       0.2101999968290329      0.05000000074505806
-38      2019-5-24 1:25:35       0.2101999968290329      0.05000000074505806
-39      2019-5-24 1:25:39       0.2101999968290329      0.05000000074505806
-40      2019-5-24 1:25:43       0.2101999968290329      0.03999999910593033
-41      2019-5-24 1:25:47       0.2101999968290329      0.03999999910593033
-42      2019-5-24 1:25:51       0.2101999968290329      0.05000000074505806
-```
+'note': as of 2020-02-07, the spidar package was added to nrgmodbus. however, functionality is not yet proven. check back for more information.
