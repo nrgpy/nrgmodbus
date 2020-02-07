@@ -6,7 +6,6 @@
 ## Installation:
 
 ```python
-# from the directory containing this README file:
 pip install nrgmodbus
 ```
 
