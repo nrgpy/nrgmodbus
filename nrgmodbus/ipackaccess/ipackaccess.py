@@ -181,6 +181,24 @@ class ipackaccess(object):
         pass
 
 
+    def return_rt_data_readings(self):
+        """ refresh all 'samp' data values """
+        # register_list = []
+        # for ch in self.hr.data_ch:
+        #     register_list.append(self.hr.data_ch[ch]['samp']['reg'][0])
+        start_reg = 1506
+        length = 100
+        self.channel_result = self.read_single_register([start_reg, length])
+        for i, value in enumerate(self.channel_result):
+            self.hr.data_ch[i+1]['samp']['value'] = value
+            
+        start_reg = 3500
+        length = 20
+        self.channel_result = self.read_single_register([start_reg, length])
+        for i, value in enumerate(self.channel_result):
+            self.hr.data_ch[i+100]['samp']['value'] = value
+
+
     def read_registers(self, list_of_registers_to_read):
         """
         returns array of converted values
@@ -199,6 +217,7 @@ class ipackaccess(object):
         wrapper for pymodbus, returns single value
         """       
         import struct
+        import traceback
         try:
             rr = self.client.read_holding_registers(register[0], register[1], unit=1)
             if register[1] == 2:
@@ -206,8 +225,8 @@ class ipackaccess(object):
                 flo = struct.unpack('>f', raw)[0]
             elif register[1] > 2:
                 flo = []
-                for i in range(0,register[1],2):
-                    raw = struct.pack('>HH', rr.registers[0], rr.registers[1])
+                for i in range(0, len(rr.registers), 2):
+                    raw = struct.pack('>HH', rr.registers[i], rr.registers[i+1])
                     temp = struct.unpack('>f', raw)[0]
                     flo.append(temp)
             else:
@@ -216,6 +235,8 @@ class ipackaccess(object):
             return flo
         except Exception as e:
             self.e = e
+            print(traceback.format_exc())
+            self.rr=rr
             return 9999
 
 

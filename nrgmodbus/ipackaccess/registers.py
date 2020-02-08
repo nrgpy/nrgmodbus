@@ -70,13 +70,14 @@ class ipackaccess_registers(object):
             m += 2
 
         for i in no_gust_channels:
-            self.data_ch[i] = {'avg': {'reg': [n, 2]}, 'sd': {'reg': [n + b, 2]}, 'max': {'reg': [n + 2*b, 2]}, 'min': {'reg': [n + 3*b, 2]}}
+            self.data_ch[i] = {'avg': {'reg': [n, 2]}, 'sd': {'reg': [n + b, 2]}, 'max': {'reg': [n + 2*b, 2]}, 'min': {'reg': [n + 3*b, 2]}, 'samp': {'reg': [m, 2]} }
             n += 4*b
+            m +=2
 
         n = 4000 # statistic start register
         m = 3500 # sample/realtime start register
         for i in calc_channels:
-            self.data_ch[i] = {'avg': {'reg': [n, 2]}, 'sd': {'reg': [n + b, 2]}, 'max': {'reg': [n + 2*b, 2]}, 'min': {'reg': [n + 3*b, 2]}}
+            self.data_ch[i] = {'avg': {'reg': [n, 2]}, 'sd': {'reg': [n + b, 2]}, 'max': {'reg': [n + 2*b, 2]}, 'min': {'reg': [n + 3*b, 2]}, 'samp': {'reg': [m, 2]} }
             n += 4*b
             m += 2
 
