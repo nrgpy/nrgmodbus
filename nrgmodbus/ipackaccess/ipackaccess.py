@@ -151,6 +151,7 @@ class ipackaccess(object):
             for i in self.hr.data_ch[ch]:
                 self.hr.data_ch[ch][i]['value'] = self.read_single_register(self.hr.data_ch[ch][i]['reg'])
 
+
     def return_channel_data(self, channel):
         """
         poll statistical registers
@@ -174,26 +175,38 @@ class ipackaccess(object):
         for i in self.hr.data_ch[channel]:
             self.hr.data_ch[channel][i]['value'] = self.read_single_register(self.hr.data_ch[channel][i]['reg'])
 
-    def return_config(self):
-        """
-        returns data from config registers
-        """
-        pass
 
+    def return_time(self):
+        """
+        returns time from config registers
+        """
+        self.read_result = self.read_single_register([1500, 6], singles=True)
+
+        self.hr.samp_time['year']['value'] = self.read_result[0]
+        self.hr.samp_time['month']['value'] = self.read_result[1]
+        self.hr.samp_time['day']['value'] = self.read_result[2]
+        self.hr.samp_time['hour']['value'] = self.read_result[3]
+        self.hr.samp_time['minute']['value'] = self.read_result[4]
+        self.hr.samp_time['second']['value'] = self.read_result[5]
+        self.hr.samp_time['datetime'] = {'value': f"{str(self.hr.samp_time['year']['value'])}-{str(self.hr.samp_time['month']['value']).zfill(2)}-{str(self.hr.samp_time['day']['value']).zfill(2)} {str(self.hr.samp_time['hour']['value']).zfill(2)}:{str(self.hr.samp_time['minute']['value']).zfill(2)}:{str(self.hr.samp_time['second']['value']).zfill(2)}"}
 
     def return_rt_data_readings(self):
         """ refresh all 'samp' data values """
         # register_list = []
         # for ch in self.hr.data_ch:
         #     register_list.append(self.hr.data_ch[ch]['samp']['reg'][0])
+        # self.return_time()
+
         start_reg = 1506
         length = 100
-        self.channel_result = self.read_single_register([start_reg, length])
-        for i, value in enumerate(self.channel_result):
+
+        self.read_result = self.read_single_register([start_reg, length])
+        for i, value in enumerate(self.read_result):
             self.hr.data_ch[i+1]['samp']['value'] = value
             
         start_reg = 3500
         length = 20
+
         self.channel_result = self.read_single_register([start_reg, length])
         for i, value in enumerate(self.channel_result):
             self.hr.data_ch[i+100]['samp']['value'] = value
@@ -212,7 +225,7 @@ class ipackaccess(object):
         return return_values
 
 
-    def read_single_register(self, register):
+    def read_single_register(self, register, singles=False):
         """
         wrapper for pymodbus, returns single value
         """       
@@ -220,15 +233,19 @@ class ipackaccess(object):
         import traceback
         try:
             rr = self.client.read_holding_registers(register[0], register[1], unit=1)
-            if register[1] == 2:
+            self.rr = rr
+
+            if register[1] == 2 and singles == False:
                 raw = struct.pack('>HH', rr.registers[0], rr.registers[1])
                 flo = struct.unpack('>f', raw)[0]
-            elif register[1] > 2:
+            elif register[1] > 2 and singles == False:
                 flo = []
                 for i in range(0, len(rr.registers), 2):
                     raw = struct.pack('>HH', rr.registers[i], rr.registers[i+1])
                     temp = struct.unpack('>f', raw)[0]
                     flo.append(temp)
+            elif register[1] > 2 and singles == True:
+                flo = rr.registers
             else:
                 flo = rr.registers[0]
             #values = rr.registers
