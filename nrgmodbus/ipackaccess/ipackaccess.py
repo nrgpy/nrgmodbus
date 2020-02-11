@@ -12,7 +12,7 @@ class ipackaccess(object):
         logger_model : int, finished good number of connected Symphonie
             (default 8206)
     """
-    def __init__(self, ip='', port=502, logger_model=8206, unit=1, connect=False):
+    def __init__(self, ip='', port=502, logger_model=8206, unit=1, connect=True):
         self.ip = ip
         self.logger_model = logger_model
         self.port = port
@@ -32,7 +32,6 @@ class ipackaccess(object):
         """
         self.hr = ipackaccess_registers()
         
-
 
     def connect(self):
         """
@@ -125,6 +124,7 @@ class ipackaccess(object):
             while time() < poll_time + interval:
                 sleep(0.01)
 
+
     def return_diag_readings(self):
         """ data from diagnostic registers
         
@@ -141,6 +141,34 @@ class ipackaccess(object):
                 pass
 
         self.hr.diag['datetime'] = {'value': f"{str(self.hr.diag['year']['value'])}-{str(self.hr.diag['month']['value']).zfill(2)}-{str(self.hr.diag['day']['value']).zfill(2)} {str(self.hr.diag['hour']['value']).zfill(2)}:{str(self.hr.diag['minute']['value']).zfill(2)}:{str(self.hr.diag['second']['value']).zfill(2)}"}
+
+
+    def return_system_readings(self):
+        """ logger and ipack system information
+
+        returns
+        -------
+        dict
+            see ipackaccess.registers for more info
+        
+        """
+        start_reg = 0
+        length = 21
+
+        self.read_result = self.read_single_register([start_reg, length], singles=True)
+
+        self.hr.logger['signed_num_ex']['value'] = combine_u32_registers(self.read_result[0:2])
+        self.hr.logger['unsigned_num_ex']['value'] = combine_u32_registers(self.read_result[2:4])
+        self.hr.logger['unsigned_16_num_ex']['value'] = self.read_result[4]
+        self.hr.logger['site_number']['value'] = combine_u32_registers(self.read_result[5:7])
+        self.hr.logger['sn']['value'] = combine_u32_registers(self.read_result[7:9])
+        self.hr.logger['model']['value'] = self.read_result[9]
+        self.hr.logger['ver']['value'] = combine_u32_registers(self.read_result[10:12])
+        self.hr.logger['fw']['value'] = combine_u32_registers(self.read_result[12:14])
+        self.hr.ipack['sn']['value'] = combine_u32_registers(self.read_result[14:16])
+        self.hr.ipack['model']['value'] = self.read_result[16]
+        self.hr.ipack['ver']['value'] = combine_u32_registers(self.read_result[17:19])
+        self.hr.ipack['fw']['value'] = combine_u32_registers(self.read_result[19:21])
 
 
     def return_all_channel_data(self):
@@ -190,15 +218,12 @@ class ipackaccess(object):
         self.hr.samp_time['second']['value'] = self.read_result[5]
         self.hr.samp_time['datetime'] = {'value': f"{str(self.hr.samp_time['year']['value'])}-{str(self.hr.samp_time['month']['value']).zfill(2)}-{str(self.hr.samp_time['day']['value']).zfill(2)} {str(self.hr.samp_time['hour']['value']).zfill(2)}:{str(self.hr.samp_time['minute']['value']).zfill(2)}:{str(self.hr.samp_time['second']['value']).zfill(2)}"}
 
+
     def return_rt_data_readings(self):
         """ refresh all 'samp' data values """
-        # register_list = []
-        # for ch in self.hr.data_ch:
-        #     register_list.append(self.hr.data_ch[ch]['samp']['reg'][0])
-        # self.return_time()
 
         start_reg = 1506
-        length = 100
+        length = 98
 
         self.read_result = self.read_single_register([start_reg, length])
         for i, value in enumerate(self.read_result):
@@ -207,8 +232,8 @@ class ipackaccess(object):
         start_reg = 3500
         length = 20
 
-        self.channel_result = self.read_single_register([start_reg, length])
-        for i, value in enumerate(self.channel_result):
+        self.read_result = self.read_single_register([start_reg, length])
+        for i, value in enumerate(self.read_result):
             self.hr.data_ch[i+100]['samp']['value'] = value
 
 
@@ -231,28 +256,30 @@ class ipackaccess(object):
         """       
         import struct
         import traceback
+
         try:
             rr = self.client.read_holding_registers(register[0], register[1], unit=1)
             self.rr = rr
 
             if register[1] == 2 and singles == False:
-                raw = struct.pack('>HH', rr.registers[0], rr.registers[1])
-                flo = struct.unpack('>f', raw)[0]
+                flo = combine_registers(rr.registers)
+
             elif register[1] > 2 and singles == False:
                 flo = []
                 for i in range(0, len(rr.registers), 2):
-                    raw = struct.pack('>HH', rr.registers[i], rr.registers[i+1])
-                    temp = struct.unpack('>f', raw)[0]
+                    temp = combine_registers([rr.registers[i], rr.registers[i+1]])
                     flo.append(temp)
+
             elif register[1] > 2 and singles == True:
                 flo = rr.registers
+
             else:
                 flo = rr.registers[0]
-            #values = rr.registers
+
             return flo
+
         except Exception as e:
             self.e = e
-            print(traceback.format_exc())
             self.rr=rr
             return 9999
 
@@ -263,3 +290,31 @@ class ipackaccess(object):
         """
         pass
 
+
+def combine_registers(registers):
+    """ combine two registers for float output
+
+    for modbus data that is two registers in length
+
+    parameters
+    ----------
+        registers : list
+            a client.read_holding_registers register response
+    
+    returns
+    -------
+    float
+    """        
+    import struct
+
+    raw = struct.pack('>HH', registers[0], registers[1])
+
+    return struct.unpack('>f', raw)[0]
+
+
+def combine_u32_registers(registers):
+    """ combine two registers for 32-bit int output """
+    import struct
+    raw = struct.pack('>HH', registers[0], registers[1])
+
+    return struct.unpack('>I', raw)[0]    

@@ -11,6 +11,7 @@ class ipackaccess_registers(object):
         self.generate_channel_dict()
         self.generate_diag_dict()
 
+
     def generate_system_dict(self):
         """generate dict of logger and ipack data"""
         self.logger = {}
@@ -27,6 +28,7 @@ class ipackaccess_registers(object):
         self.ipack['model'] = {'reg': [16, 1]}
         self.ipack['ver'] = {'reg': [17, 2]}
         self.ipack['fw'] = {'reg': [19, 2]}
+
 
     def generate_datetime_dict(self):
         """generate dicts of date/time data"""
@@ -83,7 +85,7 @@ class ipackaccess_registers(object):
 
 
     def generate_diag_dict(self):
-        # diagnostic data
+        """generate dict of diagnostic data"""
         self.diag = {}
         self.diag['year'] = {'reg': [3000, 1]}
         self.diag['month'] = {'reg': [3001, 1]}

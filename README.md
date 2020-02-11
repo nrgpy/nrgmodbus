@@ -1,18 +1,22 @@
 # ![NRGPy](https://www.gravatar.com/avatar/6282094b092c756acc9f7552b164edfe?s=24) nrgmodbus
 
-
 **nrgmodbus** is a Python package for making modbus connections to NRG devices.
 
+## Requirements
 
-## Installation:
+### SymphoniePRO/iPackACCESS
+
+- Logger FW version 3.2.3 / iPackACCESS FW version 2.2.0 (or higher)
+
+## Installation
 
 ```python
 pip install nrgmodbus
 ```
 
-## Examples:
+## Examples
 
-### Single polling:
+### Single polling
 
 ```python
 In [1]: import nrgmodbus
