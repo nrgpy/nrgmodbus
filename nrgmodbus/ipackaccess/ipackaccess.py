@@ -6,7 +6,7 @@ class ipackaccess(object):
     class for handling modbus connections to iPackACCESS
 
     parameters
-                  ip : string, ip address or domain name of zx lidar
+                  ip : string, ip address or domain name of iPack
                 port : int, port for modbus access (default 502)
                 unit : int, slave number on bus (default 1)   
         logger_model : int, finished good number of connected Symphonie
