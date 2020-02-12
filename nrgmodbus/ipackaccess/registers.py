@@ -22,12 +22,12 @@ class ipackaccess_registers(object):
         self.logger['site_number'] = {'reg': [5, 2]}
         self.logger['sn'] = {'reg': [7, 2]}
         self.logger['model'] = {'reg': [9, 1]}
-        self.logger['ver'] = {'reg': [10, 2]}
-        self.logger['fw'] = {'reg': [12, 2]}
+        self.logger['hw_ver'] = {'reg': [10, 2]}
+        self.logger['fw_ver'] = {'reg': [12, 2]}
         self.ipack['sn'] = {'reg': [14, 2]}
         self.ipack['model'] = {'reg': [16, 1]}
-        self.ipack['ver'] = {'reg': [17, 2]}
-        self.ipack['fw'] = {'reg': [19, 2]}
+        self.ipack['hw_ver'] = {'reg': [17, 2]}
+        self.ipack['fw_ver'] = {'reg': [19, 2]}
 
 
     def generate_datetime_dict(self):

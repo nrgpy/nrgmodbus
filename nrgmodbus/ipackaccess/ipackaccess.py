@@ -1,16 +1,21 @@
 #!/bin/usr/python
 from .registers import ipackaccess_registers
+from nrgmodbus.utilities import combine_u32_registers, combine_u32_registers
 
 class ipackaccess(object):
     """
     class for handling modbus connections to iPackACCESS
 
     parameters
-                  ip : string, ip address or domain name of iPack
-                port : int, port for modbus access (default 502)
-                unit : int, slave number on bus (default 1)   
-        logger_model : int, finished good number of connected Symphonie
-            (default 8206)
+    ----------
+        ip : string
+            ip address or domain name of iPack
+        port : int
+            port for modbus access (default 502)
+        unit : int
+            slave number on bus (default 1)   
+        logger_model : int
+            finished good number of connected Symphonie (default 8206)
     """
     def __init__(self, ip='', port=502, logger_model=8206, unit=1, connect=True):
         self.ip = ip
@@ -291,30 +296,3 @@ class ipackaccess(object):
         pass
 
 
-def combine_registers(registers):
-    """ combine two registers for float output
-
-    for modbus data that is two registers in length
-
-    parameters
-    ----------
-        registers : list
-            a client.read_holding_registers register response
-    
-    returns
-    -------
-    float
-    """        
-    import struct
-
-    raw = struct.pack('>HH', registers[0], registers[1])
-
-    return struct.unpack('>f', raw)[0]
-
-
-def combine_u32_registers(registers):
-    """ combine two registers for 32-bit int output """
-    import struct
-    raw = struct.pack('>HH', registers[0], registers[1])
-
-    return struct.unpack('>I', raw)[0]    
