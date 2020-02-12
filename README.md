@@ -16,7 +16,7 @@ pip install nrgmodbus
 
 ## Examples
 
-### Single polling
+### iPackACCESS
 
 ```python
 In [1]: import nrgmodbus
