@@ -47,4 +47,18 @@ Out[8]: {'avg': {'reg': [2506, 2], 'value': 6.4},
 
 ## spidar
 
-'note': as of 2020-02-07, the spidar package was added to nrgmodbus. however, functionality is not yet proven. check back for more information.
+```python
+In [1]: import nrgmodbus
+
+In [2]: poller = nrgmodbus.spidar_v1(ip="192.168.1.1", connect=True)
+Connecting to 192.168.1.1...                [OK]
+
+In [3]: poller.return_rt_data_readings()
+
+In [4]: poller.hr.met_data
+Out[4]: ...
+
+In [5]: poller.hr.data_ch
+Out[5]: ...
+
+```

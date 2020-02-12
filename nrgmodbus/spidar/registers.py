@@ -20,10 +20,10 @@ class spidar_registers(object):
         n = 0 # register offset value
 
         self.met_data = {}
-        self.met_data['pressure'] = {'reg':[n+2, 1], 'type':'UINT16', 'range': '0 to 1000.0', 'units': 'mmHg', 'scaling': 0.1}
-        self.met_data['temperature'] = {'reg':[n+3, 1], 'type':'INT16', 'range': '-100.0 to 100.0', 'units': 'C', 'scaling': 1}
-        self.met_data['humidity'] = {'reg':[n+4, 1], 'type':'UINT16', 'range': '0 to 100.00', 'units': '%', 'scaling': 1}
-        self.met_data['precipitation'] = {'reg':[n+5, 1], 'type':'UINT16', 'range': '0 to 100', 'units': 'n/a', 'scaling': 1}
+        self.met_data['pressure'] = {'reg':[n+2, 1], 'type':'UINT16', 'range': '0 to 1000.0', 'units': 'mmHg', 'scaling': 0.01}
+        self.met_data['temperature'] = {'reg':[n+3, 1], 'type':'INT16', 'range': '-100.0 to 100.0', 'units': 'C', 'scaling': 0.001}
+        self.met_data['humidity'] = {'reg':[n+4, 1], 'type':'UINT16', 'range': '0 to 100.00', 'units': '%', 'scaling': 0.01}
+        self.met_data['precipitation'] = {'reg':[n+5, 1], 'type':'UINT16', 'range': '0 to 100', 'units': 'n/a', 'scaling': 0.01}
 
     def generate_range_gate_dict(self):
         """ remote sensing data """
@@ -41,10 +41,10 @@ class spidar_registers(object):
                     'sd': {'reg': [n+9, 1], 'type':'UINT16', 'range': '0 to 40.0', 'units': 'm/s', 'scaling': 0.01},
                     },
                 'dir': { 
-                    'min': {'reg': [n+10, 1], 'type':'UINT16', 'range': '0.0 to 359.9', 'units': 'deg', 'scaling': 0.001},
-                    'max': {'reg': [n+11, 1], 'type':'UINT16', 'range': '0.0 to 359.9', 'units': 'deg', 'scaling': 0.001},
-                    'avg': {'reg': [n+12, 1], 'type':'UINT16', 'range': '0.0 to 359.9', 'units': 'deg', 'scaling': 0.001},
-                    'sd': {'reg': [n+13, 1], 'type':'UINT16', 'range': '0.0 to 359.9', 'units': 'deg', 'scaling': 0.001},
+                    'min': {'reg': [n+10, 1], 'type':'UINT16', 'range': '0.0 to 359.9', 'units': 'deg', 'scaling': 0.01},
+                    'max': {'reg': [n+11, 1], 'type':'UINT16', 'range': '0.0 to 359.9', 'units': 'deg', 'scaling': 0.01},
+                    'avg': {'reg': [n+12, 1], 'type':'UINT16', 'range': '0.0 to 359.9', 'units': 'deg', 'scaling': 0.01},
+                    'sd': {'reg': [n+13, 1], 'type':'UINT16', 'range': '0.0 to 359.9', 'units': 'deg', 'scaling': 0.01},
                     },
                 'quality': {'reg': [n+14, 1], 'type':'UINT16', 'range': '0 to 100', 'units': 'n/a', 'scaling': 1}
                 }

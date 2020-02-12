@@ -1,6 +1,6 @@
 #!/bin/usr/python
 from .registers import ipackaccess_registers
-from nrgmodbus.utilities import combine_u32_registers, combine_u32_registers
+from nrgmodbus.utilities import combine_registers, combine_u32_registers
 
 class ipackaccess(object):
     """
@@ -168,12 +168,12 @@ class ipackaccess(object):
         self.hr.logger['site_number']['value'] = combine_u32_registers(self.read_result[5:7])
         self.hr.logger['sn']['value'] = combine_u32_registers(self.read_result[7:9])
         self.hr.logger['model']['value'] = self.read_result[9]
-        self.hr.logger['ver']['value'] = combine_u32_registers(self.read_result[10:12])
-        self.hr.logger['fw']['value'] = combine_u32_registers(self.read_result[12:14])
+        self.hr.logger['hw_ver']['value'] = combine_u32_registers(self.read_result[10:12])
+        self.hr.logger['fw_ver']['value'] = combine_u32_registers(self.read_result[12:14])
         self.hr.ipack['sn']['value'] = combine_u32_registers(self.read_result[14:16])
         self.hr.ipack['model']['value'] = self.read_result[16]
-        self.hr.ipack['ver']['value'] = combine_u32_registers(self.read_result[17:19])
-        self.hr.ipack['fw']['value'] = combine_u32_registers(self.read_result[19:21])
+        self.hr.ipack['hw_ver']['value'] = combine_u32_registers(self.read_result[17:19])
+        self.hr.ipack['fw_ver']['value'] = combine_u32_registers(self.read_result[19:21])
 
 
     def return_all_channel_data(self):
@@ -226,20 +226,25 @@ class ipackaccess(object):
 
     def return_rt_data_readings(self):
         """ refresh all 'samp' data values """
+        self.return_time()
 
         start_reg = 1506
-        length = 98
+        length = 100
 
-        self.read_result = self.read_single_register([start_reg, length])
-        for i, value in enumerate(self.read_result):
-            self.hr.data_ch[i+1]['samp']['value'] = value
+        self.read_result = self.read_single_register([start_reg, length], singles=True)
+        ch = 1
+        for i in range(0, len(self.read_result), 2):
+            self.hr.data_ch[ch]['samp']['value'] = combine_registers(self.read_result[i:i+2])
+            ch += 1
             
         start_reg = 3500
         length = 20
 
-        self.read_result = self.read_single_register([start_reg, length])
-        for i, value in enumerate(self.read_result):
-            self.hr.data_ch[i+100]['samp']['value'] = value
+        self.read_result = self.read_single_register([start_reg, length], singles=True)
+        ch = 100
+        for i in range(0, len(self.read_result), 2):
+            self.hr.data_ch[ch]['samp']['value'] = combine_registers(self.read_result[i:i+2])
+            ch += 1
 
 
     def read_registers(self, list_of_registers_to_read):
