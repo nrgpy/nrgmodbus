@@ -1,5 +1,6 @@
 #!/bin/usr/python
 from .registers import spidar_registers
+from nrgmodbus.utilities import convert_hex_to_float
 
 class spidar_v1(object):
     """ 
@@ -67,10 +68,13 @@ class spidar_v1(object):
 
         self.read_result = self.read_single_register([start_reg, length], singles=True)
 
-        self.hr.met_data['pressure']['value'] = self.read_result[2] * self.hr.met_data['pressure']['scaling']
-        self.hr.met_data['temperature']['value'] = self.read_result[3] * self.hr.met_data['temperature']['scaling']
-        self.hr.met_data['humidity']['value'] = self.read_result[4] * self.hr.met_data['humidity']['scaling']
-        self.hr.met_data['precipitation']['value'] = self.read_result[5] * self.hr.met_data['precipitation']['scaling']
+        self.hr.met_data['pressure']['value'] = self.read_result[1] * self.hr.met_data['pressure']['scaling']
+
+        self.hr.met_data['temperature']['value'] = self.read_result[2] * self.hr.met_data['temperature']['scaling']
+        if self.hr.met_data['temperature']['scaling'] > 100: self.hr.met_data['temperature']['value'] -= 656
+        
+        self.hr.met_data['humidity']['value'] = self.read_result[3] * self.hr.met_data['humidity']['scaling']
+        self.hr.met_data['precipitation']['value'] = self.read_result[4] * self.hr.met_data['precipitation']['scaling']
 
         n = 5
 

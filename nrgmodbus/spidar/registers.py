@@ -20,10 +20,10 @@ class spidar_registers(object):
         n = 0 # register offset value
 
         self.met_data = {}
-        self.met_data['pressure'] = {'reg':[n+2, 1], 'type':'UINT16', 'range': '0 to 1000.0', 'units': 'mmHg', 'scaling': 0.01}
-        self.met_data['temperature'] = {'reg':[n+3, 1], 'type':'INT16', 'range': '-100.0 to 100.0', 'units': 'C', 'scaling': 0.001}
+        self.met_data['pressure'] = {'reg':[n+2, 1], 'type':'UINT16', 'range': '0 to 1000.0', 'units': 'mmHg', 'scaling': 0.1}
+        self.met_data['temperature'] = {'reg':[n+3, 1], 'type':'INT16', 'range': '-100.0 to 100.0', 'units': 'C', 'scaling': 0.01}
         self.met_data['humidity'] = {'reg':[n+4, 1], 'type':'UINT16', 'range': '0 to 100.00', 'units': '%', 'scaling': 0.01}
-        self.met_data['precipitation'] = {'reg':[n+5, 1], 'type':'UINT16', 'range': '0 to 100', 'units': 'n/a', 'scaling': 0.01}
+        self.met_data['precipitation'] = {'reg':[n+5, 1], 'type':'UINT16', 'range': '0 to 100', 'units': 'n/a', 'scaling': 1}
 
     def generate_range_gate_dict(self):
         """ remote sensing data """

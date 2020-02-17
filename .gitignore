@@ -1,3 +1,5 @@
+*.vscode/
+*.ipynb_checkpoints/
 *__pycache__/
 *egg-info/
 build/
@@ -5,4 +7,5 @@ dist/
 venv/
 
 *ipynb
+*.pkl
 !.gitignore

@@ -1,3 +1,6 @@
+import struct
+
+
 def combine_registers(registers):
     """ combine two registers for float output
 
@@ -12,8 +15,6 @@ def combine_registers(registers):
     -------
     float
     """        
-    import struct
-
     raw = struct.pack('>HH', registers[0], registers[1])
 
     return struct.unpack('>f', raw)[0]
@@ -21,8 +22,13 @@ def combine_registers(registers):
 
 def combine_u32_registers(registers):
     """ combine two registers for 32-bit int output """
-    import struct
     raw = struct.pack('>HH', registers[0], registers[1])
 
     return struct.unpack('>I', raw)[0]    
 
+
+def convert_hex_to_float(value):
+
+    raw = struct.pack('>H', value)
+
+    return struct.unpack('>I', raw)[0]
