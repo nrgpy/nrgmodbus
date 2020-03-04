@@ -1,1 +1,3 @@
-__path__ = __import__('pkgutil').extend_path(__path__, __name__)
+__name__ = "ipackaccess"
+from .ipackaccess import ipackaccess
+from .registers import ipackaccess_registers
