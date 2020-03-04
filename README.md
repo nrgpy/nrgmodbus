@@ -19,9 +19,9 @@ pip install nrgmodbus
 ### iPackACCESS
 
 ```python
-In [1]: import nrgmodbus
+In [1]: from nrgmodbus.ipackaccess import ipackaccess
 
-In [2]: poller = nrgmodbus.ipackaccess(ip='192.168.178.168')
+In [2]: poller = ipackaccess(ip='192.168.178.168')
 
 In [3]: poller.connect()
 Connecting to 192.168.178.168...                [OK]
@@ -48,9 +48,9 @@ Out[8]: {'avg': {'reg': [2506, 2], 'value': 6.4},
 ## spidar
 
 ```python
-In [1]: import nrgmodbus
+In [1]: from nrgmodbus.spidar import spidar_v1
 
-In [2]: poller = nrgmodbus.spidar_v1(ip="192.168.1.1", connect=True)
+In [2]: poller = spidar_v1(ip="192.168.1.1", connect=True)
 Connecting to 192.168.1.1...                [OK]
 
 In [3]: poller.return_rt_data_readings()
