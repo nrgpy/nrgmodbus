@@ -1,11 +1,11 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 with open("README.md", "r") as fh:
       long_description = fh.read()
 
 setup(
     name='nrgmodbus',
-    version='0.2.10',
+    version='0.2.11',
     description='library for making modbus connections to NRG Systems devices.',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -18,9 +18,7 @@ setup(
         'ipackaccess',
         'spidar'
     ],
-    packages=[
-        'nrgmodbus',
-    ],
+    packages=find_packages(),
     install_requires= [
         'pymodbus',
         'requests',
