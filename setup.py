@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='nrgmodbus',
-    version='0.2.7',
+    version='0.2.8',
     description='library for making modbus connections to NRG Systems devices.',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -14,7 +14,10 @@ setup(
     author_email='support@nrgsystems.com',
     licence='MIT',
     keywords='nrg systems symphoniepro ipackaccess wind modbus spidar',
-    py_modules=['ipackaccess','spidar'],
+    py_modules=[
+        'ipackaccess',
+        'spidar'
+    ],
     packages=[
         'nrgmodbus',
     ],
@@ -23,5 +26,5 @@ setup(
         'requests',
     ],
     python_requires='>=3.0',
-    zip_safe=False
+    zip_safe=True
 )
