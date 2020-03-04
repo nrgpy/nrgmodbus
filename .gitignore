@@ -8,4 +8,5 @@ venv/
 
 *ipynb
 *.pkl
+save_modbus_readings.py
 !.gitignore
