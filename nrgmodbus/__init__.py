@@ -1,1 +1,2 @@
-__path__ = __import__('pkgutil').extend_path(__path__, __name__)
+from nrgmodbus.ipackaccess import ipackaccess, ipackaccess_registers
+from nrgmodbus.spidar import spidar_v1, spidar_registers
