@@ -1,9 +1,13 @@
 #!/bin/usr/python
+try:
+    from nrgmodbus import logger
+except ImportError:
+    pass
 from .registers import spidar_registers
-from nrgmodbus.utilities import convert_hex_to_float
+
 
 class spidar_v1(object):
-    """ 
+    """
     class for handling modbus connections to Spidar V1 systems
 
     parameters
@@ -13,7 +17,7 @@ class spidar_v1(object):
         port : int
             port for modbus access (default 502)
         unit : int
-            slave number on bus (default 1) 
+            slave number on bus (default 1)
     """
     def __init__(self, ip='', port=502, unit=1, connect=False):
         self.ip = ip
@@ -21,13 +25,12 @@ class spidar_v1(object):
         self.unit = unit
         self.init_registers()
         self.e = ''
-        if connect == True:
-            self.connect()
 
+        if connect is True:
+            self.connect()
 
     def init_registers(self):
         self.hr = spidar_registers()
-
 
     def connect(self):
         """
@@ -35,31 +38,30 @@ class spidar_v1(object):
         """
         from pymodbus.client.sync import ModbusTcpClient as ModbusClient
 
-        self.client = ModbusClient(host=self.ip,port=self.port,unit=self.unit)
-        print("Connecting to {0}... \t\t".format(self.ip), end="", flush=True)
+        self.client = ModbusClient(host=self.ip, port=self.port, unit=self.unit)
+        logger.info("Connecting to {0}".format(self.ip))
         try:
             self.client.connect()
-            if self.client.is_socket_open() == True:
-                print("[OK]")
+            if self.client.is_socket_open() is True:
+                logger.info("Connected to Spidar OK")
             else:
                 self.client.connect()
-                if self.client.is_socket_open != True:
+                if self.client.is_socket_open is not True:
+                    logger.error('Could Not Connect to {0}'.format(self.ip))
                     raise ValueError('Could Not Connect to {0}'.format(self.ip))
         except Exception as e:
             self.e = e
-            print("[FAILED]")
-            print(self.e)
-
+            logger.error("Connection failed")
+            logger.debug(self.e)
 
     def disconnect(self):
-        print("Disconnecting from {0}... \t\t".format(self.ip), end="", flush=True)
+        logger.info("Disconnecting from {0}".format(self.ip))
         try:
             self.client.close()
-            print("[OK]")
+            logger.info("Closed connection")
         except Exception as e:
-            print("[ERROR]")
-            print(e)
-
+            logger.error("Error closing connection")
+            logger.debug(e)
 
     def return_rt_data_readings(self):
         """ refresh all registers """
@@ -71,8 +73,9 @@ class spidar_v1(object):
         self.hr.met_data['pressure']['value'] = self.read_result[1] * self.hr.met_data['pressure']['scaling']
 
         self.hr.met_data['temperature']['value'] = self.read_result[2] * self.hr.met_data['temperature']['scaling']
-        if self.hr.met_data['temperature']['scaling'] > 100: self.hr.met_data['temperature']['value'] -= 656
-        
+        if self.hr.met_data['temperature']['scaling'] > 100:
+            self.hr.met_data['temperature']['value'] -= 656
+
         self.hr.met_data['humidity']['value'] = self.read_result[3] * self.hr.met_data['humidity']['scaling']
         self.hr.met_data['precipitation']['value'] = self.read_result[4] * self.hr.met_data['precipitation']['scaling']
 
@@ -96,24 +99,13 @@ class spidar_v1(object):
     def read_single_register(self, register, singles=False):
         """
         wrapper for pymodbus, returns single value
-        """       
-        import struct
-        import traceback
+        """
 
         try:
             rr = self.client.read_holding_registers(register[0], register[1], unit=1)
             self.rr = rr
 
-            if register[1] == 2 and singles == False:
-                flo = combine_registers(rr.registers)
-
-            elif register[1] > 2 and singles == False:
-                flo = []
-                for i in range(0, len(rr.registers), 2):
-                    temp = combine_registers([rr.registers[i], rr.registers[i+1]])
-                    flo.append(temp)
-
-            elif register[1] > 2 and singles == True:
+            if register[1] > 2 and singles is True:
                 flo = rr.registers
 
             else:
@@ -123,6 +115,5 @@ class spidar_v1(object):
 
         except Exception as e:
             self.e = e
-            self.rr=rr
+            self.rr = rr
             return 9999
-

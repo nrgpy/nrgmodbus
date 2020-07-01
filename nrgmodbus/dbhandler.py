@@ -26,25 +26,25 @@
 #             print(e)
 #         finally:
 #             conn.close()
-
-    
-    def open_db(self):
-        """
-        open an existing sqlite3 database
-        """
-        pass
-
-
-    def write_to_db(self):
-        """
-        write data to sqlite3 database
-        """
-        pass
-
-
-    def read_from_db(self):
-        """
-        read from sqlite3 database
-        """
-        pass
-
+#
+#
+#    def open_db(self):
+#        """
+#        open an existing sqlite3 database
+#        """
+#        pass
+#
+#
+#    def write_to_db(self):
+#        """
+#        write data to sqlite3 database
+#        """
+#        pass
+#
+#
+#    def read_from_db(self):
+#        """
+#        read from sqlite3 database
+#        """
+#        pass
+#

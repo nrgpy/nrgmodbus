@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 
 with open("README.md", "r") as fh:
-      long_description = fh.read()
+    long_description = fh.read()
 
 setup(
     name='nrgmodbus',
-    version='0.2.21',
+    version='0.3.0',
     description='library for making modbus connections to NRG Systems devices.',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -15,7 +15,7 @@ setup(
     licence='MIT',
     keywords='nrg systems symphoniepro ipackaccess wind modbus spidar',
     packages=find_packages(),
-    install_requires= [
+    install_requires=[
         'pymodbus',
         'requests',
     ],
