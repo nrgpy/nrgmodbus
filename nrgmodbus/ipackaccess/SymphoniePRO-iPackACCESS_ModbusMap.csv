@@ -1,0 +1,364 @@
+Address,Offset,Description,Type
+0,0,Configuration.32 Bit Floating point number 12345678,FloatingPoint32Bit
+2,2,Configuration.Unsigned 32 Bit number 123456789,UnsignedInteger32Bit
+4,4,Configuration.Unsigned 16 Bit number 12345,UnsignedInteger16Bit
+5,5,Configuration.Site Number,UnsignedInteger32Bit
+7,7,Configuration.Logger Serial Number,UnsignedInteger32Bit
+9,9,Configuration.Logger Model Number,UnsignedInteger16Bit
+10,10,Configuration.Logger Model Version Number,UnsignedInteger32Bit
+12,12,Configuration.Logger Firmware Version Number,UnsignedInteger32Bit
+14,14,Configuration.iPack Serial Number,UnsignedInteger32Bit
+16,16,Configuration.iPack Model Number,UnsignedInteger16Bit
+17,17,Configuration.iPack Model Version Number,UnsignedInteger32Bit
+19,19,Configuration.iPack Firmware Version Number,UnsignedInteger32Bit
+1500,0,One Second.Year UTC,UnsignedInteger16Bit
+1501,1,One Second.Month UTC,UnsignedInteger16Bit
+1502,2,One Second.Day UTC,UnsignedInteger16Bit
+1503,3,One Second.Hour UTC,UnsignedInteger16Bit
+1504,4,One Second.Minute UTC,UnsignedInteger16Bit
+1505,5,One Second.Second UTC,UnsignedInteger16Bit
+1506,6,One Second.Channel 1,FloatingPoint32Bit
+1508,8,One Second.Channel 2,FloatingPoint32Bit
+1510,10,One Second.Channel 3,FloatingPoint32Bit
+1512,12,One Second.Channel 4,FloatingPoint32Bit
+1514,14,One Second.Channel 5,FloatingPoint32Bit
+1516,16,One Second.Channel 6,FloatingPoint32Bit
+1518,18,One Second.Channel 7,FloatingPoint32Bit
+1520,20,One Second.Channel 8,FloatingPoint32Bit
+1522,22,One Second.Channel 9,FloatingPoint32Bit
+1524,24,One Second.Channel 10,FloatingPoint32Bit
+1526,26,One Second.Channel 11,FloatingPoint32Bit
+1528,28,One Second.Channel 12,FloatingPoint32Bit
+1530,30,One Second.Channel 13,FloatingPoint32Bit
+1532,32,One Second.Channel 14,FloatingPoint32Bit
+1534,34,One Second.Channel 15,FloatingPoint32Bit
+1536,36,One Second.Channel 16,FloatingPoint32Bit
+1538,38,One Second.Channel 17,FloatingPoint32Bit
+1540,40,One Second.Channel 18,FloatingPoint32Bit
+1542,42,One Second.Channel 19,FloatingPoint32Bit
+1544,44,One Second.Channel 20,FloatingPoint32Bit
+1546,46,One Second.Channel 21,FloatingPoint32Bit
+1548,48,One Second.Channel 22,FloatingPoint32Bit
+1550,50,One Second.Channel 23,FloatingPoint32Bit
+1552,52,One Second.Channel 24,FloatingPoint32Bit
+1554,54,One Second.Channel 25,FloatingPoint32Bit
+1556,56,One Second.Channel 26,FloatingPoint32Bit
+1558,58,One Second.Channel 27,FloatingPoint32Bit
+1560,60,One Second.Channel 28,FloatingPoint32Bit
+1562,62,One Second.Channel 29,FloatingPoint32Bit
+1564,64,One Second.Channel 30,FloatingPoint32Bit
+1566,66,One Second.Channel 31,FloatingPoint32Bit
+1568,68,One Second.Channel 32,FloatingPoint32Bit
+1570,70,One Second.Channel 33,FloatingPoint32Bit
+1572,72,One Second.Channel 34,FloatingPoint32Bit
+1574,74,One Second.Channel 35,FloatingPoint32Bit
+1576,76,One Second.Channel 36,FloatingPoint32Bit
+1578,78,One Second.Channel 37,FloatingPoint32Bit
+1580,80,One Second.Channel 38,FloatingPoint32Bit
+1582,82,One Second.Channel 39,FloatingPoint32Bit
+1584,84,One Second.Channel 40,FloatingPoint32Bit
+1586,86,One Second.Channel 41,FloatingPoint32Bit
+1588,88,One Second.Channel 42,FloatingPoint32Bit
+1590,90,One Second.Channel 43,FloatingPoint32Bit
+1592,92,One Second.Channel 44,FloatingPoint32Bit
+1594,94,One Second.Channel 45,FloatingPoint32Bit
+1596,96,One Second.Channel 46,FloatingPoint32Bit
+1598,98,One Second.Channel 47,FloatingPoint32Bit
+1600,100,One Second.Channel 48,FloatingPoint32Bit
+1602,102,One Second.Channel 49,FloatingPoint32Bit
+1604,104,One Second.Channel 50,FloatingPoint32Bit
+2500,0,Statistical.Year UTC,UnsignedInteger16Bit
+2501,1,Statistical.Month UTC,UnsignedInteger16Bit
+2502,2,Statistical.Day UTC,UnsignedInteger16Bit
+2503,3,Statistical.Hour UTC,UnsignedInteger16Bit
+2504,4,Statistical.Minute UTC,UnsignedInteger16Bit
+2505,5,Statistical.Second UTC,UnsignedInteger16Bit
+2506,6,Statistical.Counter Channel 1 Average or Total,FloatingPoint32Bit
+2508,8,Statistical.Counter Channel 1 Standard Deviation,FloatingPoint32Bit
+2510,10,Statistical.Counter Channel 1 Max,FloatingPoint32Bit
+2512,12,Statistical.Counter Channel 1 Min,FloatingPoint32Bit
+2514,14,Statistical.Counter Channel 1 Maximum Gust,FloatingPoint32Bit
+2516,16,Statistical.Counter Channel 2 Average or Total,FloatingPoint32Bit
+2518,18,Statistical.Counter Channel 2 Standard Deviation,FloatingPoint32Bit
+2520,20,Statistical.Counter Channel 2 Max,FloatingPoint32Bit
+2522,22,Statistical.Counter Channel 2 Min,FloatingPoint32Bit
+2524,24,Statistical.Counter Channel 2 Maximum Gust,FloatingPoint32Bit
+2526,26,Statistical.Counter Channel 3 Average or Total,FloatingPoint32Bit
+2528,28,Statistical.Counter Channel 3 Standard Deviation,FloatingPoint32Bit
+2530,30,Statistical.Counter Channel 3 Max,FloatingPoint32Bit
+2532,32,Statistical.Counter Channel 3 Min,FloatingPoint32Bit
+2534,34,Statistical.Counter Channel 3 Maximum Gust,FloatingPoint32Bit
+2536,36,Statistical.Counter Channel 4 Average or Total,FloatingPoint32Bit
+2538,38,Statistical.Counter Channel 4 Standard Deviation,FloatingPoint32Bit
+2540,40,Statistical.Counter Channel 4 Max,FloatingPoint32Bit
+2542,42,Statistical.Counter Channel 4 Min,FloatingPoint32Bit
+2544,44,Statistical.Counter Channel 4 Maximum Gust,FloatingPoint32Bit
+2546,46,Statistical.Counter Channel 5 Average or Total,FloatingPoint32Bit
+2548,48,Statistical.Counter Channel 5 Standard Deviation,FloatingPoint32Bit
+2550,50,Statistical.Counter Channel 5 Max,FloatingPoint32Bit
+2552,52,Statistical.Counter Channel 5 Min,FloatingPoint32Bit
+2554,54,Statistical.Counter Channel 5 Maximum Gust,FloatingPoint32Bit
+2556,56,Statistical.Counter Channel 6 Average or Total,FloatingPoint32Bit
+2558,58,Statistical.Counter Channel 6 Standard Deviation,FloatingPoint32Bit
+2560,60,Statistical.Counter Channel 6 Max,FloatingPoint32Bit
+2562,62,Statistical.Counter Channel 6 Min,FloatingPoint32Bit
+2564,64,Statistical.Counter Channel 6 Maximum Gust,FloatingPoint32Bit
+2566,66,Statistical.Counter Channel 7 Average or Total,FloatingPoint32Bit
+2568,68,Statistical.Counter Channel 7 Standard Deviation,FloatingPoint32Bit
+2570,70,Statistical.Counter Channel 7 Max,FloatingPoint32Bit
+2572,72,Statistical.Counter Channel 7 Min,FloatingPoint32Bit
+2574,74,Statistical.Counter Channel 7 Maximum Gust,FloatingPoint32Bit
+2576,76,Statistical.Counter Channel 8 Average or Total,FloatingPoint32Bit
+2578,78,Statistical.Counter Channel 8 Standard Deviation,FloatingPoint32Bit
+2580,80,Statistical.Counter Channel 8 Max,FloatingPoint32Bit
+2582,82,Statistical.Counter Channel 8 Min,FloatingPoint32Bit
+2584,84,Statistical.Counter Channel 8 Maximum Gust,FloatingPoint32Bit
+2586,86,Statistical.Counter Channel 9 Average or Total,FloatingPoint32Bit
+2588,88,Statistical.Counter Channel 9 Standard Deviation,FloatingPoint32Bit
+2590,90,Statistical.Counter Channel 9 Max,FloatingPoint32Bit
+2592,92,Statistical.Counter Channel 9 Min,FloatingPoint32Bit
+2594,94,Statistical.Counter Channel 9 Maximum Gust,FloatingPoint32Bit
+2596,96,Statistical.Counter Channel 10 Average or Total,FloatingPoint32Bit
+2598,98,Statistical.Counter Channel 10 Standard Deviation,FloatingPoint32Bit
+2600,100,Statistical.Counter Channel 10 Max,FloatingPoint32Bit
+2602,102,Statistical.Counter Channel 10 Min,FloatingPoint32Bit
+2604,104,Statistical.Counter Channel 10 Maximum Gust,FloatingPoint32Bit
+2606,106,Statistical.Counter Channel 11 Average or Total,FloatingPoint32Bit
+2608,108,Statistical.Counter Channel 11 Standard Deviation,FloatingPoint32Bit
+2610,110,Statistical.Counter Channel 11 Max,FloatingPoint32Bit
+2612,112,Statistical.Counter Channel 11 Min,FloatingPoint32Bit
+2614,114,Statistical.Counter Channel 11 Maximum Gust,FloatingPoint32Bit
+2616,116,Statistical.Counter Channel 12 Average or Total,FloatingPoint32Bit
+2618,118,Statistical.Counter Channel 12 Standard Deviation,FloatingPoint32Bit
+2620,120,Statistical.Counter Channel 12 Max,FloatingPoint32Bit
+2622,122,Statistical.Counter Channel 12 Min,FloatingPoint32Bit
+2624,124,Statistical.Counter Channel 12 Maximum Gust,FloatingPoint32Bit
+2626,126,Statistical.Analog Channel 13 Average,FloatingPoint32Bit
+2628,128,Statistical.Analog Channel 13 Standard Deviation,FloatingPoint32Bit
+2630,130,Statistical.Analog Channel 13 Max,FloatingPoint32Bit
+2632,132,Statistical.Analog Channel 13 Min,FloatingPoint32Bit
+2634,134,Statistical.Analog Channel 14 Average,FloatingPoint32Bit
+2636,136,Statistical.Analog Channel 14 Standard Deviation,FloatingPoint32Bit
+2638,138,Statistical.Analog Channel 14 Max,FloatingPoint32Bit
+2640,140,Statistical.Analog Channel 14 Min,FloatingPoint32Bit
+2642,142,Statistical.Analog Channel 15 Average,FloatingPoint32Bit
+2644,144,Statistical.Analog Channel 15 Standard Deviation,FloatingPoint32Bit
+2646,146,Statistical.Analog Channel 15 Max,FloatingPoint32Bit
+2648,148,Statistical.Analog Channel 15 Min,FloatingPoint32Bit
+2650,150,Statistical.Analog Channel 16 Average,FloatingPoint32Bit
+2652,152,Statistical.Analog Channel 16 Standard Deviation,FloatingPoint32Bit
+2654,154,Statistical.Analog Channel 16 Max,FloatingPoint32Bit
+2656,156,Statistical.Analog Channel 16 Min,FloatingPoint32Bit
+2658,158,Statistical.Analog Channel 17 Average,FloatingPoint32Bit
+2660,160,Statistical.Analog Channel 17 Standard Deviation,FloatingPoint32Bit
+2662,162,Statistical.Analog Channel 17 Max,FloatingPoint32Bit
+2664,164,Statistical.Analog Channel 17 Min,FloatingPoint32Bit
+2666,166,Statistical.Analog Channel 18 Average,FloatingPoint32Bit
+2668,168,Statistical.Analog Channel 18 Standard Deviation,FloatingPoint32Bit
+2670,170,Statistical.Analog Channel 18 Max,FloatingPoint32Bit
+2672,172,Statistical.Analog Channel 18 Min,FloatingPoint32Bit
+2674,174,Statistical.Analog Channel 19 Average,FloatingPoint32Bit
+2676,176,Statistical.Analog Channel 19 Standard Deviation,FloatingPoint32Bit
+2678,178,Statistical.Analog Channel 19 Max,FloatingPoint32Bit
+2680,180,Statistical.Analog Channel 19 Min,FloatingPoint32Bit
+2682,182,Statistical.Analog Channel 20 Average,FloatingPoint32Bit
+2684,184,Statistical.Analog Channel 20 Standard Deviation,FloatingPoint32Bit
+2686,186,Statistical.Analog Channel 20 Max,FloatingPoint32Bit
+2688,188,Statistical.Analog Channel 20 Min,FloatingPoint32Bit
+2690,190,Statistical.Analog Channel 21 Average,FloatingPoint32Bit
+2692,192,Statistical.Analog Channel 21 Standard Deviation,FloatingPoint32Bit
+2694,194,Statistical.Analog Channel 21 Max,FloatingPoint32Bit
+2696,196,Statistical.Analog Channel 21 Min,FloatingPoint32Bit
+2698,198,Statistical.Analog Channel 22 Average,FloatingPoint32Bit
+2700,200,Statistical.Analog Channel 22 Standard Deviation,FloatingPoint32Bit
+2702,202,Statistical.Analog Channel 22 Max,FloatingPoint32Bit
+2704,204,Statistical.Analog Channel 22 Min,FloatingPoint32Bit
+2706,206,Statistical.Analog Channel 23 Average,FloatingPoint32Bit
+2708,208,Statistical.Analog Channel 23 Standard Deviation,FloatingPoint32Bit
+2710,210,Statistical.Analog Channel 23 Max,FloatingPoint32Bit
+2712,212,Statistical.Analog Channel 23 Min,FloatingPoint32Bit
+2714,214,Statistical.Analog Channel 24 Average,FloatingPoint32Bit
+2716,216,Statistical.Analog Channel 24 Standard Deviation,FloatingPoint32Bit
+2718,218,Statistical.Analog Channel 24 Max,FloatingPoint32Bit
+2720,220,Statistical.Analog Channel 24 Min,FloatingPoint32Bit
+2722,222,Statistical.Analog Channel 25 Average,FloatingPoint32Bit
+2724,224,Statistical.Analog Channel 25 Standard Deviation,FloatingPoint32Bit
+2726,226,Statistical.Analog Channel 25 Max,FloatingPoint32Bit
+2728,228,Statistical.Analog Channel 25 Min,FloatingPoint32Bit
+2730,230,Statistical.Analog Channel 26 Average,FloatingPoint32Bit
+2732,232,Statistical.Analog Channel 26 Standard Deviation,FloatingPoint32Bit
+2734,234,Statistical.Analog Channel 26 Max,FloatingPoint32Bit
+2736,236,Statistical.Analog Channel 26 Min,FloatingPoint32Bit
+2738,238,Statistical.Serial Channel 27 Average,FloatingPoint32Bit
+2740,240,Statistical.Serial Channel 27 Standard Deviation,FloatingPoint32Bit
+2742,242,Statistical.Serial Channel 27 Max,FloatingPoint32Bit
+2744,244,Statistical.Serial Channel 27 Min,FloatingPoint32Bit
+2746,246,Statistical.Serial Channel 28 Average,FloatingPoint32Bit
+2748,248,Statistical.Serial Channel 28 Standard Deviation,FloatingPoint32Bit
+2750,250,Statistical.Serial Channel 28 Max,FloatingPoint32Bit
+2752,252,Statistical.Serial Channel 28 Min,FloatingPoint32Bit
+2754,254,Statistical.Serial Channel 29 Average,FloatingPoint32Bit
+2756,256,Statistical.Serial Channel 29 Standard Deviation,FloatingPoint32Bit
+2758,258,Statistical.Serial Channel 29 Max,FloatingPoint32Bit
+2760,260,Statistical.Serial Channel 29 Min,FloatingPoint32Bit
+2762,262,Statistical.Serial Channel 30 Average,FloatingPoint32Bit
+2764,264,Statistical.Serial Channel 30 Standard Deviation,FloatingPoint32Bit
+2766,266,Statistical.Serial Channel 30 Max,FloatingPoint32Bit
+2768,268,Statistical.Serial Channel 30 Min,FloatingPoint32Bit
+2770,270,Statistical.Serial Channel 31 Average,FloatingPoint32Bit
+2772,272,Statistical.Serial Channel 31 Standard Deviation,FloatingPoint32Bit
+2774,274,Statistical.Serial Channel 31 Max,FloatingPoint32Bit
+2776,276,Statistical.Serial Channel 31 Min,FloatingPoint32Bit
+2778,278,Statistical.Serial Channel 32 Average,FloatingPoint32Bit
+2780,280,Statistical.Serial Channel 32 Standard Deviation,FloatingPoint32Bit
+2782,282,Statistical.Serial Channel 32 Max,FloatingPoint32Bit
+2784,284,Statistical.Serial Channel 32 Min,FloatingPoint32Bit
+2786,286,Statistical.Serial Channel 33 Average,FloatingPoint32Bit
+2788,288,Statistical.Serial Channel 33 Standard Deviation,FloatingPoint32Bit
+2790,290,Statistical.Serial Channel 33 Max,FloatingPoint32Bit
+2792,292,Statistical.Serial Channel 33 Min,FloatingPoint32Bit
+2794,294,Statistical.Serial Channel 34 Average,FloatingPoint32Bit
+2796,296,Statistical.Serial Channel 34 Standard Deviation,FloatingPoint32Bit
+2798,298,Statistical.Serial Channel 34 Max,FloatingPoint32Bit
+2800,300,Statistical.Serial Channel 34 Min,FloatingPoint32Bit
+2802,302,Statistical.Serial Channel 35 Average,FloatingPoint32Bit
+2804,304,Statistical.Serial Channel 35 Standard Deviation,FloatingPoint32Bit
+2806,306,Statistical.Serial Channel 35 Max,FloatingPoint32Bit
+2808,308,Statistical.Serial Channel 35 Min,FloatingPoint32Bit
+2810,310,Statistical.Serial Channel 36 Average,FloatingPoint32Bit
+2812,312,Statistical.Serial Channel 36 Standard Deviation,FloatingPoint32Bit
+2814,314,Statistical.Serial Channel 36 Max,FloatingPoint32Bit
+2816,316,Statistical.Serial Channel 36 Min,FloatingPoint32Bit
+2818,318,Statistical.Serial Channel 37 Average,FloatingPoint32Bit
+2820,320,Statistical.Serial Channel 37 Standard Deviation,FloatingPoint32Bit
+2822,322,Statistical.Serial Channel 37 Max,FloatingPoint32Bit
+2824,324,Statistical.Serial Channel 37 Min,FloatingPoint32Bit
+2826,326,Statistical.Serial Channel 38 Average,FloatingPoint32Bit
+2828,328,Statistical.Serial Channel 38 Standard Deviation,FloatingPoint32Bit
+2830,330,Statistical.Serial Channel 38 Max,FloatingPoint32Bit
+2832,332,Statistical.Serial Channel 38 Min,FloatingPoint32Bit
+2834,334,Statistical.Serial Channel 39 Average,FloatingPoint32Bit
+2836,336,Statistical.Serial Channel 39 Standard Deviation,FloatingPoint32Bit
+2838,338,Statistical.Serial Channel 39 Max,FloatingPoint32Bit
+2840,340,Statistical.Serial Channel 39 Min,FloatingPoint32Bit
+2842,342,Statistical.Serial Channel 40 Average,FloatingPoint32Bit
+2844,344,Statistical.Serial Channel 40 Standard Deviation,FloatingPoint32Bit
+2846,346,Statistical.Serial Channel 40 Max,FloatingPoint32Bit
+2848,348,Statistical.Serial Channel 40 Min,FloatingPoint32Bit
+2850,350,Statistical.Serial Channel 41 Average,FloatingPoint32Bit
+2852,352,Statistical.Serial Channel 41 Standard Deviation,FloatingPoint32Bit
+2854,354,Statistical.Serial Channel 41 Max,FloatingPoint32Bit
+2856,356,Statistical.Serial Channel 41 Min,FloatingPoint32Bit
+2858,358,Statistical.Serial Channel 42 Average,FloatingPoint32Bit
+2860,360,Statistical.Serial Channel 42 Standard Deviation,FloatingPoint32Bit
+2862,362,Statistical.Serial Channel 42 Max,FloatingPoint32Bit
+2864,364,Statistical.Serial Channel 42 Min,FloatingPoint32Bit
+2866,366,Statistical.Serial Channel 43 Average,FloatingPoint32Bit
+2868,368,Statistical.Serial Channel 43 Standard Deviation,FloatingPoint32Bit
+2870,370,Statistical.Serial Channel 43 Max,FloatingPoint32Bit
+2872,372,Statistical.Serial Channel 43 Min,FloatingPoint32Bit
+2874,374,Statistical.Serial Channel 44 Average,FloatingPoint32Bit
+2876,376,Statistical.Serial Channel 44 Standard Deviation,FloatingPoint32Bit
+2878,378,Statistical.Serial Channel 44 Max,FloatingPoint32Bit
+2880,380,Statistical.Serial Channel 44 Min,FloatingPoint32Bit
+2882,382,Statistical.Serial Channel 45 Average,FloatingPoint32Bit
+2884,384,Statistical.Serial Channel 45 Standard Deviation,FloatingPoint32Bit
+2886,386,Statistical.Serial Channel 45 Max,FloatingPoint32Bit
+2888,388,Statistical.Serial Channel 45 Min,FloatingPoint32Bit
+2890,390,Statistical.Serial Channel 46 Average,FloatingPoint32Bit
+2892,392,Statistical.Serial Channel 46 Standard Deviation,FloatingPoint32Bit
+2894,394,Statistical.Serial Channel 46 Max,FloatingPoint32Bit
+2896,396,Statistical.Serial Channel 46 Min,FloatingPoint32Bit
+2898,398,Statistical.Serial Channel 47 Average,FloatingPoint32Bit
+2900,400,Statistical.Serial Channel 47 Standard Deviation,FloatingPoint32Bit
+2902,402,Statistical.Serial Channel 47 Max,FloatingPoint32Bit
+2904,404,Statistical.Serial Channel 47 Min,FloatingPoint32Bit
+2906,406,Statistical.Serial Channel 48 Average,FloatingPoint32Bit
+2908,408,Statistical.Serial Channel 48 Standard Deviation,FloatingPoint32Bit
+2910,410,Statistical.Serial Channel 48 Max,FloatingPoint32Bit
+2912,412,Statistical.Serial Channel 48 Min,FloatingPoint32Bit
+2914,414,Statistical.Serial Channel 49 Average,FloatingPoint32Bit
+2916,416,Statistical.Serial Channel 49 Standard Deviation,FloatingPoint32Bit
+2918,418,Statistical.Serial Channel 49 Max,FloatingPoint32Bit
+2920,420,Statistical.Serial Channel 49 Min,FloatingPoint32Bit
+2922,422,Statistical.Serial Channel 50 Average,FloatingPoint32Bit
+2924,424,Statistical.Serial Channel 50 Standard Deviation,FloatingPoint32Bit
+2926,426,Statistical.Serial Channel 50 Max,FloatingPoint32Bit
+2928,428,Statistical.Serial Channel 50 Min,FloatingPoint32Bit
+3000,0,Diagnostic.Year UTC,UnsignedInteger16Bit
+3001,1,Diagnostic.Month UTC,UnsignedInteger16Bit
+3002,2,Diagnostic.Day UTC,UnsignedInteger16Bit
+3003,3,Diagnostic.Hour UTC,UnsignedInteger16Bit
+3004,4,Diagnostic.Minute UTC,UnsignedInteger16Bit
+3005,5,Diagnostic.Second UTC,UnsignedInteger16Bit
+3006,6,Diagnostic.Temperature,FloatingPoint32Bit
+3008,8,Diagnostic.12V Nominal Battery,FloatingPoint32Bit
+3010,10,Diagnostic.12V Nominal Battery Current to Sensors mA,FloatingPoint32Bit
+3012,12,Diagnostic.2V Nominal DCell or iPack Voltage,FloatingPoint32Bit
+3014,14,Diagnostic.5V Current to Sensors mA,FloatingPoint32Bit
+3016,16,Diagnostic.Is SD card loaded,UnsignedInteger16Bit
+3017,17,Diagnostic.Free SD Card Memory KB,UnsignedInteger32Bit
+3019,19,Diagnostic.Used SD Card Memory KB,UnsignedInteger32Bit
+3021,21,Diagnostic.Timezone Offset Hours,FloatingPoint32Bit
+3500,0,One Second Calculated.Year UTC,UnsignedInteger16Bit
+3501,1,One Second Calculated.Month UTC,UnsignedInteger16Bit
+3502,2,One Second Calculated.Day UTC,UnsignedInteger16Bit
+3503,3,One Second Calculated.Hour UTC,UnsignedInteger16Bit
+3504,4,One Second Calculated.Minute UTC,UnsignedInteger16Bit
+3505,5,One Second Calculated.Second UTC,UnsignedInteger16Bit
+3506,6,One Second Calculated.Channel 100,FloatingPoint32Bit
+3508,8,One Second Calculated.Channel 101,FloatingPoint32Bit
+3510,10,One Second Calculated.Channel 102,FloatingPoint32Bit
+3512,12,One Second Calculated.Channel 103,FloatingPoint32Bit
+3514,14,One Second Calculated.Channel 104,FloatingPoint32Bit
+3516,16,One Second Calculated.Channel 105,FloatingPoint32Bit
+3518,18,One Second Calculated.Channel 106,FloatingPoint32Bit
+3520,20,One Second Calculated.Channel 107,FloatingPoint32Bit
+3522,22,One Second Calculated.Channel 108,FloatingPoint32Bit
+3524,24,One Second Calculated.Channel 109,FloatingPoint32Bit
+4000,0,Statistical Calculated.Year UTC,UnsignedInteger16Bit
+4001,1,Statistical Calculated.Month UTC,UnsignedInteger16Bit
+4002,2,Statistical Calculated.Day UTC,UnsignedInteger16Bit
+4003,3,Statistical Calculated.Hour UTC,UnsignedInteger16Bit
+4004,4,Statistical Calculated.Minute UTC,UnsignedInteger16Bit
+4005,5,Statistical Calculated.Second UTC,UnsignedInteger16Bit
+4006,6,Statistical Calculated.Channel 100 Average,FloatingPoint32Bit
+4008,8,Statistical Calculated.Channel 100 Standard Deviation,FloatingPoint32Bit
+4010,10,Statistical Calculated.Channel 100 Max,FloatingPoint32Bit
+4012,12,Statistical Calculated.Channel 100 Min,FloatingPoint32Bit
+4014,14,Statistical Calculated.Channel 101 Average,FloatingPoint32Bit
+4016,16,Statistical Calculated.Channel 101 Standard Deviation,FloatingPoint32Bit
+4018,18,Statistical Calculated.Channel 101 Max,FloatingPoint32Bit
+4020,20,Statistical Calculated.Channel 101 Min,FloatingPoint32Bit
+4022,22,Statistical Calculated.Channel 102 Average,FloatingPoint32Bit
+4024,24,Statistical Calculated.Channel 102 Standard Deviation,FloatingPoint32Bit
+4026,26,Statistical Calculated.Channel 102 Max,FloatingPoint32Bit
+4028,28,Statistical Calculated.Channel 102 Min,FloatingPoint32Bit
+4030,30,Statistical Calculated.Channel 103 Average,FloatingPoint32Bit
+4032,32,Statistical Calculated.Channel 103 Standard Deviation,FloatingPoint32Bit
+4034,34,Statistical Calculated.Channel 103 Max,FloatingPoint32Bit
+4036,36,Statistical Calculated.Channel 103 Min,FloatingPoint32Bit
+4038,38,Statistical Calculated.Channel 104 Average,FloatingPoint32Bit
+4040,40,Statistical Calculated.Channel 104 Standard Deviation,FloatingPoint32Bit
+4042,42,Statistical Calculated.Channel 104 Max,FloatingPoint32Bit
+4044,44,Statistical Calculated.Channel 104 Min,FloatingPoint32Bit
+4046,46,Statistical Calculated.Channel 105 Average,FloatingPoint32Bit
+4048,48,Statistical Calculated.Channel 105 Standard Deviation,FloatingPoint32Bit
+4050,50,Statistical Calculated.Channel 105 Max,FloatingPoint32Bit
+4052,52,Statistical Calculated.Channel 105 Min,FloatingPoint32Bit
+4054,54,Statistical Calculated.Channel 106 Average,FloatingPoint32Bit
+4056,56,Statistical Calculated.Channel 106 Standard Deviation,FloatingPoint32Bit
+4058,58,Statistical Calculated.Channel 106 Max,FloatingPoint32Bit
+4060,60,Statistical Calculated.Channel 106 Min,FloatingPoint32Bit
+4062,62,Statistical Calculated.Channel 107 Average,FloatingPoint32Bit
+4064,64,Statistical Calculated.Channel 107 Standard Deviation,FloatingPoint32Bit
+4066,66,Statistical Calculated.Channel 107 Max,FloatingPoint32Bit
+4068,68,Statistical Calculated.Channel 107 Min,FloatingPoint32Bit
+4070,70,Statistical Calculated.Channel 108 Average,FloatingPoint32Bit
+4072,72,Statistical Calculated.Channel 108 Standard Deviation,FloatingPoint32Bit
+4074,74,Statistical Calculated.Channel 108 Max,FloatingPoint32Bit
+4076,76,Statistical Calculated.Channel 108 Min,FloatingPoint32Bit
+4078,78,Statistical Calculated.Channel 109 Average,FloatingPoint32Bit
+4080,80,Statistical Calculated.Channel 109 Standard Deviation,FloatingPoint32Bit
+4082,82,Statistical Calculated.Channel 109 Max,FloatingPoint32Bit
+4084,84,Statistical Calculated.Channel 109 Min,FloatingPoint32Bit

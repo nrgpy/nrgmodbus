@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='nrgmodbus',
-    version='0.3.0',
+    version='0.3.1',
     description='library for making modbus connections to NRG Systems devices.',
     long_description=long_description,
     long_description_content_type='text/markdown',
