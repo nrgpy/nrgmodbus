@@ -1,0 +1,106 @@
+Address,Offset,Description,Type
+0,0,Statistical Data.Not used,UnsignedInteger16Bit
+1,1,Statistical Data.Pressure (mmHg),UnsignedInteger16Bit
+2,2,Statistical Data.Temperature (C),SignedInteger16Bit
+3,3,Statistical Data.Humidity (%),UnsignedInteger16Bit
+4,4,Statistical Data.Precipitation (0|100},UnsignedInteger16Bit
+5,5,Statistical Data.Range Gate 1 Height (m),UnsignedInteger16Bit
+6,6,Statistical Data.Range Gate 1 Wind Speed Min. (m/s),UnsignedInteger16Bit
+7,7,Statistical Data.Range Gate 1 Wind Speed Max. (m/s),UnsignedInteger16Bit
+8,8,Statistical Data.Range Gate 1 Wind Speed Avg. (m/s),UnsignedInteger16Bit
+9,9,Statistical Data.Range Gate 1 Wind Speed Sd. (m/s),UnsignedInteger16Bit
+10,10,Statistical Data.Range Gate 1 Wind Direction Min. (deg.),UnsignedInteger16Bit
+11,11,Statistical Data.Range Gate 1 Wind Direction Max. (deg.),UnsignedInteger16Bit
+12,12,Statistical Data.Range Gate 1 Wind Direction Avg. (deg.),UnsignedInteger16Bit
+13,13,Statistical Data.Range Gate 1 Wind Direction Sd. (deg.),UnsignedInteger16Bit
+14,14,Statistical Data.Range Gate 1 Quality,UnsignedInteger16Bit
+15,15,Statistical Data.Range Gate 2 Height (m),UnsignedInteger16Bit
+16,16,Statistical Data.Range Gate 2 Wind Speed Min. (m/s),UnsignedInteger16Bit
+17,17,Statistical Data.Range Gate 2 Wind Speed Max. (m/s),UnsignedInteger16Bit
+18,18,Statistical Data.Range Gate 2 Wind Speed Avg. (m/s),UnsignedInteger16Bit
+19,19,Statistical Data.Range Gate 2 Wind Speed Sd. (m/s),UnsignedInteger16Bit
+20,20,Statistical Data.Range Gate 2 Wind Direction Min. (deg.),UnsignedInteger16Bit
+21,21,Statistical Data.Range Gate 2 Wind Direction Max. (deg.),UnsignedInteger16Bit
+22,22,Statistical Data.Range Gate 2 Wind Direction Avg. (deg.),UnsignedInteger16Bit
+23,23,Statistical Data.Range Gate 2 Wind Direction Sd. (deg.),UnsignedInteger16Bit
+24,24,Statistical Data.Range Gate 2 Quality,UnsignedInteger16Bit
+25,25,Statistical Data.Range Gate 3 Height (m),UnsignedInteger16Bit
+26,26,Statistical Data.Range Gate 3 Wind Speed Min. (m/s),UnsignedInteger16Bit
+27,27,Statistical Data.Range Gate 3 Wind Speed Max. (m/s),UnsignedInteger16Bit
+28,28,Statistical Data.Range Gate 3 Wind Speed Avg. (m/s),UnsignedInteger16Bit
+29,29,Statistical Data.Range Gate 3 Wind Speed Sd. (m/s),UnsignedInteger16Bit
+30,30,Statistical Data.Range Gate 3 Wind Direction Min. (deg.),UnsignedInteger16Bit
+31,31,Statistical Data.Range Gate 3 Wind Direction Max. (deg.),UnsignedInteger16Bit
+32,32,Statistical Data.Range Gate 3 Wind Direction Avg. (deg.),UnsignedInteger16Bit
+33,33,Statistical Data.Range Gate 3 Wind Direction Sd. (deg.),UnsignedInteger16Bit
+34,34,Statistical Data.Range Gate 3 Quality,UnsignedInteger16Bit
+35,35,Statistical Data.Range Gate 4 Height (m),UnsignedInteger16Bit
+36,36,Statistical Data.Range Gate 4 Wind Speed Min. (m/s),UnsignedInteger16Bit
+37,37,Statistical Data.Range Gate 4 Wind Speed Max. (m/s),UnsignedInteger16Bit
+38,38,Statistical Data.Range Gate 4 Wind Speed Avg. (m/s),UnsignedInteger16Bit
+39,39,Statistical Data.Range Gate 4 Wind Speed Sd. (m/s),UnsignedInteger16Bit
+40,40,Statistical Data.Range Gate 4 Wind Direction Min. (deg.),UnsignedInteger16Bit
+41,41,Statistical Data.Range Gate 4 Wind Direction Max. (deg.),UnsignedInteger16Bit
+42,42,Statistical Data.Range Gate 4 Wind Direction Avg. (deg.),UnsignedInteger16Bit
+43,43,Statistical Data.Range Gate 4 Wind Direction Sd. (deg.),UnsignedInteger16Bit
+44,44,Statistical Data.Range Gate 4 Quality,UnsignedInteger16Bit
+45,45,Statistical Data.Range Gate 5 Height (m),UnsignedInteger16Bit
+46,46,Statistical Data.Range Gate 5 Wind Speed Min. (m/s),UnsignedInteger16Bit
+47,47,Statistical Data.Range Gate 5 Wind Speed Max. (m/s),UnsignedInteger16Bit
+48,48,Statistical Data.Range Gate 5 Wind Speed Avg. (m/s),UnsignedInteger16Bit
+49,49,Statistical Data.Range Gate 5 Wind Speed Sd. (m/s),UnsignedInteger16Bit
+50,50,Statistical Data.Range Gate 5 Wind Direction Min. (deg.),UnsignedInteger16Bit
+51,51,Statistical Data.Range Gate 5 Wind Direction Max. (deg.),UnsignedInteger16Bit
+52,52,Statistical Data.Range Gate 5 Wind Direction Avg. (deg.),UnsignedInteger16Bit
+53,53,Statistical Data.Range Gate 5 Wind Direction Sd. (deg.),UnsignedInteger16Bit
+54,54,Statistical Data.Range Gate 5 Quality,UnsignedInteger16Bit
+55,55,Statistical Data.Range Gate 6 Height (m),UnsignedInteger16Bit
+56,56,Statistical Data.Range Gate 6 Wind Speed Min. (m/s),UnsignedInteger16Bit
+57,57,Statistical Data.Range Gate 6 Wind Speed Max. (m/s),UnsignedInteger16Bit
+58,58,Statistical Data.Range Gate 6 Wind Speed Avg. (m/s),UnsignedInteger16Bit
+59,59,Statistical Data.Range Gate 6 Wind Speed Sd. (m/s),UnsignedInteger16Bit
+60,60,Statistical Data.Range Gate 6 Wind Direction Min. (deg.),UnsignedInteger16Bit
+61,61,Statistical Data.Range Gate 6 Wind Direction Max. (deg.),UnsignedInteger16Bit
+62,62,Statistical Data.Range Gate 6 Wind Direction Avg. (deg.),UnsignedInteger16Bit
+63,63,Statistical Data.Range Gate 6 Wind Direction Sd. (deg.),UnsignedInteger16Bit
+64,64,Statistical Data.Range Gate 6 Quality,UnsignedInteger16Bit
+65,65,Statistical Data.Range Gate 7 Height (m),UnsignedInteger16Bit
+66,66,Statistical Data.Range Gate 7 Wind Speed Min. (m/s),UnsignedInteger16Bit
+67,67,Statistical Data.Range Gate 7 Wind Speed Max. (m/s),UnsignedInteger16Bit
+68,68,Statistical Data.Range Gate 7 Wind Speed Avg. (m/s),UnsignedInteger16Bit
+69,69,Statistical Data.Range Gate 7 Wind Speed Sd. (m/s),UnsignedInteger16Bit
+70,70,Statistical Data.Range Gate 7 Wind Direction Min. (deg.),UnsignedInteger16Bit
+71,71,Statistical Data.Range Gate 7 Wind Direction Max. (deg.),UnsignedInteger16Bit
+72,72,Statistical Data.Range Gate 7 Wind Direction Avg. (deg.),UnsignedInteger16Bit
+73,73,Statistical Data.Range Gate 7 Wind Direction Sd. (deg.),UnsignedInteger16Bit
+74,74,Statistical Data.Range Gate 7 Quality,UnsignedInteger16Bit
+75,75,Statistical Data.Range Gate 8 Height (m),UnsignedInteger16Bit
+76,76,Statistical Data.Range Gate 8 Wind Speed Min. (m/s),UnsignedInteger16Bit
+77,77,Statistical Data.Range Gate 8 Wind Speed Max. (m/s),UnsignedInteger16Bit
+78,78,Statistical Data.Range Gate 8 Wind Speed Avg. (m/s),UnsignedInteger16Bit
+79,79,Statistical Data.Range Gate 8 Wind Speed Sd. (m/s),UnsignedInteger16Bit
+80,80,Statistical Data.Range Gate 8 Wind Direction Min. (deg.),UnsignedInteger16Bit
+81,81,Statistical Data.Range Gate 8 Wind Direction Max. (deg.),UnsignedInteger16Bit
+82,82,Statistical Data.Range Gate 8 Wind Direction Avg. (deg.),UnsignedInteger16Bit
+83,83,Statistical Data.Range Gate 8 Wind Direction Sd. (deg.),UnsignedInteger16Bit
+84,84,Statistical Data.Range Gate 8 Quality,UnsignedInteger16Bit
+85,85,Statistical Data.Range Gate 9 Height (m),UnsignedInteger16Bit
+86,86,Statistical Data.Range Gate 9 Wind Speed Min. (m/s),UnsignedInteger16Bit
+87,87,Statistical Data.Range Gate 9 Wind Speed Max. (m/s),UnsignedInteger16Bit
+88,88,Statistical Data.Range Gate 9 Wind Speed Avg. (m/s),UnsignedInteger16Bit
+89,89,Statistical Data.Range Gate 9 Wind Speed Sd. (m/s),UnsignedInteger16Bit
+90,90,Statistical Data.Range Gate 9 Wind Direction Min. (deg.),UnsignedInteger16Bit
+91,91,Statistical Data.Range Gate 9 Wind Direction Max. (deg.),UnsignedInteger16Bit
+92,92,Statistical Data.Range Gate 9 Wind Direction Avg. (deg.),UnsignedInteger16Bit
+93,93,Statistical Data.Range Gate 9 Wind Direction Sd. (deg.),UnsignedInteger16Bit
+94,94,Statistical Data.Range Gate 9 Quality,UnsignedInteger16Bit
+95,95,Statistical Data.Range Gate 10 Height (m),UnsignedInteger16Bit
+96,96,Statistical Data.Range Gate 10 Wind Speed Min. (m/s),UnsignedInteger16Bit
+97,97,Statistical Data.Range Gate 10 Wind Speed Max. (m/s),UnsignedInteger16Bit
+98,98,Statistical Data.Range Gate 10 Wind Speed Avg. (m/s),UnsignedInteger16Bit
+99,99,Statistical Data.Range Gate 10 Wind Speed Sd. (m/s),UnsignedInteger16Bit
+100,100,Statistical Data.Range Gate 10 Wind Direction Min. (deg.),UnsignedInteger16Bit
+101,101,Statistical Data.Range Gate 10 Wind Direction Max. (deg.),UnsignedInteger16Bit
+102,102,Statistical Data.Range Gate 10 Wind Direction Avg. (deg.),UnsignedInteger16Bit
+103,103,Statistical Data.Range Gate 10 Wind Direction Sd. (deg.),UnsignedInteger16Bit
+104,104,Statistical Data.Range Gate 10 Quality,UnsignedInteger16Bit
